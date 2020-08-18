@@ -45,8 +45,7 @@ def is_valid(string):
     Returns:
       A boolean, true if the string has the form of an account's name.
     """
-    return (isinstance(string, str) and
-            bool(re.match('{}$'.format(ACCOUNT_RE), string)))
+    return (isinstance(string, str))
 
 
 def join(*components):

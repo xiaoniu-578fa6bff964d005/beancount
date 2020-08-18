@@ -238,10 +238,6 @@ class Builder(lexer.LexBuilder):
         Returns:
           A string, the account name.
         """
-        if not self.account_regexp.match(account):
-            meta = new_metadata(filename, lineno)
-            self.errors.append(
-                ParserError(meta, "Invalid account name: {}".format(account), None))
         # Intern account names. This should reduces memory usage a
         # fair bit because these strings are repeated liberally.
         return self.accounts.setdefault(account, account)
